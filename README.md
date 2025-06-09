@@ -102,9 +102,10 @@ yarn build
 - onAll- подписка на все события.
 - offAll- сброс всех подписчиков.
 - trigger- генерирует событие при вызове.
+---
 
 ### Слой Model
----
+
 Класс **ApiClient**
 
 Назначение: управление запросами к серверу.
@@ -119,6 +120,7 @@ yarn build
 - getProductList(): загружает список товаров с сеервера.
 - getProduct(id: string): загружает товар по его id.
 - postOrder(order: IOrderData): отправляет данные о заказе на сервер.
+---
 
 Класс **AppData**
 
@@ -134,6 +136,7 @@ yarn build
 - get productCards()- возвращает текущий массив товаров.
 - set productCards(data: IProduct[]) - устанавливает новый массив товаров и уведомляет другие части приложения о том, что данные обновлены.
 - setPreview(item: IProduct)- устанавливает выбранную карточку товара для предварительного просмотра и уведомляет об этом других подписчиков.
+---
 
 Класс **BasketModel**
 
@@ -152,6 +155,7 @@ yarn build
 - getCounter(): возвращает количество товаров в корзине.
 - getTotalSumProducts(): рассчитывает общую сумму стоимости всех товаров в корзине.
 - isInBasket(id: string): boolean - предназначен для проверки, находится ли товар с указанным id в корзине.
+---
 
 Класс **OrderForm**
 
@@ -176,7 +180,7 @@ yarn build
 - validContact(): void - выводит ошибку, если не заполнены контакты.
 - updateOrder(): void - проверяет валидность формы заказа и отправляет событие order:stateChange с текущим состоянием формы.
 - updateContact(): void - проверяет валидность формы контактов и отправляет событие contacts:stateChange с текущим состоянием формы
-
+---
 
 ### Слой View
 
@@ -197,6 +201,7 @@ yarn build
 - set items(items: HTMLElement[]) - сеттер для обновления списка товаров в корзине.
 - renderTotalSumProducts(sumAll: number) - обновляет общую стоимость товаров в корзине.
 - render() - метод для рендеринга корзины, возвращает клонированный элемент корзины для отображения на странице.
+---
 
 Класс **BasketItem**
 
@@ -211,6 +216,7 @@ yarn build
 Методы:
 
 - render(item: IProduct, item: number): HTMLElement - метод для заполнения данных и отображения товара.
+---
 
 Класс **Card**
 
@@ -227,6 +233,7 @@ yarn build
 
 - set cardCategory(value: string) - метод для отображения цвета карточки товара
 - render(item: IProduct): HTMLElement - метод для заполнения данными и отображения карточки товара.
+---
 
 Класс **CardPreview**
 
@@ -242,6 +249,7 @@ yarn build
 - handleAddToBasket(): void - проверяет активность кнопки добавления в корзину.
 - getButtonLabel(item: IProduct, isInBasket: boolean): string - метод для определения текста кнопки "Купить" в зависимости от наличия цены и добавления в корзину.
 - render(item: IProduct): HTMLElement - метод для рендеринга карточки товара с переданными данными.
+---
 
 Класс **ContactsForm**
 
@@ -257,6 +265,7 @@ yarn build
 - getEventName(): string - метод возвращает уникальное пространство имен для событий формы.
 - handleSubmit(): void - метод обрабатывает отправку формы.
 - render(): HTMLElement - метод для рендеринга формы и добавления специфичных обработчиков событий для её полей.
+---
 
 Класс **Form**
 
@@ -280,6 +289,7 @@ yarn build
 - set isValid(value: boolean) - сеттер для управления состоянием кнопки отправки.
 - displayErrors(): void - выводит ошибки на форме.
 - render(): HTMLElement - возвращает корневой элемент формы для последующего рендера.
+---
 
 Класс **Model**
 
@@ -297,6 +307,7 @@ yarn build
 - close(): void - закрывает модальное окно.
 - setContent(value: HTMLElement): void - устанавливает содержимое модального окна.
 - render(): HTMLElement - отображает модальное окно, вызывая метод open.
+---
 
 Класс **Order**
 
@@ -309,6 +320,7 @@ yarn build
 - getEventName(): string- метод возвращает пространство имен для событий, связанных с оформлением заказа.
 - handleSubmit(): void - метод обработки отправки формы.
 - render() - метод рендеринга формы и добавления обработчиков событий для полей ввода и кнопок выбора способа оплаты.
+---
 
 Класс **Page**
 
@@ -326,6 +338,7 @@ yarn build
 - renderBasketCounter() - метод для обновления счетчика товаров в корзине в шапке страницы.
 - set locked() - метод для блокировки или разблокировки страницы.
 - appendCard() - метод для добавления карточки товара в галерею.
+---
 
 Класс **Render**
 
@@ -342,6 +355,7 @@ yarn build
 - setPrice(value: number | null): string - метод для форматирования цены.
 - renderTitle(element: HTMLElement, title: string): void - метод для рендеринга заголовка товара.
 - renderPrice(element: HTMLElement, price: number | null): void - метод для рендеринга цены товара.
+---
 
 Класс **Success**
 
@@ -357,6 +371,7 @@ yarn build
 
 - render(total: number): HTMLElement - возвращает корневой элемент success.
 ---
+
 ## Слой Presenter
 
 ### Код, относящийся к слою Presenter, реализован в (index.ts) основном скрипте приложения.
