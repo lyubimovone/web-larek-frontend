@@ -75,15 +75,14 @@ yarn build
 
 Поля:
 
-- baseUrl: string - базовый URL для API-запросов.
-- options: RequestInit - настройки запросов, включая заголовки и другие параметры.
+- `baseUrl: string` - базовый URL для API-запросов.
+- `options: RequestInit` - настройки запросов, включая заголовки и другие параметры.
 
 Методы:
 
-- handleResponse(response: Response): Promise<object> - обработчик ответа сервера.
-- get(uri: string) - принимает изменяющеюся часть url-адреса, возвращает ответ от сервера.
-- post(uri: string, data: object, method: ApiPostMethods = 'POST')- выполняет POST, PUT или DELETE-запрос на указанный URI с указанными данными.
-
+- `handleResponse(response: Response): Promise<object>` - обработчик ответа сервера.
+- `get(uri: string)` - принимает изменяющеюся часть url-адреса, возвращает ответ от сервера.
+- `post(uri: string, data: object, method: ApiPostMethods = 'POST')`- выполняет POST, PUT или DELETE-запрос на указанный URI с указанными данными.
 ---
 
 Класс **EventEmitter**
@@ -92,16 +91,16 @@ yarn build
 
 Поля:
 
-- _events: Map<EventName, Set<Subscriber>>- хранилище событий и связанных с ними подписчиков.
+- `_events: Map<EventName, Set<Subscriber>>`- хранилище событий и связанных с ними подписчиков.
 
 Методы:
 
-- on - подписка на событие.
-- off- отписка от события.
-- emit- инициирует событие с данными.
-- onAll- подписка на все события.
-- offAll- сброс всех подписчиков.
-- trigger- генерирует событие при вызове.
+- `on` - подписка на событие.
+- `off`- отписка от события.
+- `emit`- инициирует событие с данными.
+- `onAll`- подписка на все события.
+- `offAll`- сброс всех подписчиков.
+- `trigger`- генерирует событие при вызове.
 ---
 
 ### Слой Model
@@ -112,14 +111,14 @@ yarn build
 
 Поля:
 
-- cdn: string - базовый URL сервера для API.
-- items: IProduct[] - массив товаров типа IProduct.
+- `cdn: string` - базовый URL сервера для API.
+- `items: IProduct[]` - массив товаров типа IProduct.
 
 Методы:
 
-- getProductList(): загружает список товаров с сеервера.
-- getProduct(id: string): загружает товар по его id.
-- postOrder(order: IOrderData): отправляет данные о заказе на сервер.
+- `getProductList()`: загружает список товаров с сеервера.
+- `getProduct(id: string)`: загружает товар по его id.
+- `postOrder(order: IOrderData)`: отправляет данные о заказе на сервер.
 ---
 
 Класс **AppData**
@@ -128,14 +127,14 @@ yarn build
 
 Поля:
 
-- _productsCards: IProduct[] - хранит список карточек продуктов.
-- selectedCard: IProduct - хранит информацию о текущей выбранной карточке товара.
+- `_productsCards: IProduct[]` - хранит список карточек продуктов.
+- `selectedCard: IProduct` - хранит информацию о текущей выбранной карточке товара.
 
 Методы:
 
-- get productCards()- возвращает текущий массив товаров.
-- set productCards(data: IProduct[]) - устанавливает новый массив товаров и уведомляет другие части приложения о том, что данные обновлены.
-- setPreview(item: IProduct)- устанавливает выбранную карточку товара для предварительного просмотра и уведомляет об этом других подписчиков.
+- `get productCards()`- возвращает текущий массив товаров.
+- `set productCards(data: IProduct[])` - устанавливает новый массив товаров и уведомляет другие части приложения о том, что данные обновлены.
+- `setPreview(item: IProduct)`- устанавливает выбранную карточку товара для предварительного просмотра и уведомляет об этом других подписчиков.
 ---
 
 Класс **BasketModel**
@@ -144,17 +143,17 @@ yarn build
 
 Поля:
 
-- basket: IProduct[] - хранит список текущих товаров в корзине.
+- `basket: IProduct[]` - хранит список текущих товаров в корзине.
 
 Методы:
 
-- get basketProducts(): возвращает текущий список товаров в корзине.
-- addToBasket(item: IProduct): добавляет товар в корзину.
-- removeFromBasket(item: IProduct): удаляет товар из корзины.
-- clearBasket(): очищает корзину, удаляя все товары.
-- getCounter(): возвращает количество товаров в корзине.
-- getTotalSumProducts(): рассчитывает общую сумму стоимости всех товаров в корзине.
-- isInBasket(id: string): boolean - предназначен для проверки, находится ли товар с указанным id в корзине.
+- `get basketProducts()`: возвращает текущий список товаров в корзине.
+- `addToBasket(item: IProduct)`: добавляет товар в корзину.
+- `removeFromBasket(item: IProduct)`: удаляет товар из корзины.
+- `clearBasket()`: очищает корзину, удаляя все товары.
+- `getCounter()`: возвращает количество товаров в корзине.
+- `getTotalSumProducts()`: рассчитывает общую сумму стоимости всех товаров в корзине.
+- `isInBasket(id: string)`: boolean - предназначен для проверки, находится ли товар с указанным id в корзине.
 ---
 
 Класс **OrderForm**
@@ -163,23 +162,23 @@ yarn build
 
 Поля:
 
-- address: string - хранит адрес доставки заказа.
-- email: string - хранит адрес электронной почты пользователя.
-- phone: string - хранит номер телефона пользователя.
-- payment: string- хранит выбранный способ оплаты.
+- `address: string` - хранит адрес доставки заказа.
+- `email: string` - хранит адрес электронной почты пользователя.
+- `phone: string` - хранит номер телефона пользователя.
+- `payment: string` - хранит выбранный способ оплаты.
 
 Методы:
 
-- setAddressForm(value: string): void - устанавливает адрес доставки и проверяет состояние формы.
-- setOrderForm(field: string, value: string): void - устанавливает значение для указанного поля формы и обновляет состояние формы контактов.
-- setPaymentMethod(paymentMethod: string): void - устанавливает выбранный способ оплаты и обновляет состояние формы.
-- validationOrder(): boolean - проверяет, заполнены ли все обязательные поля формы заказа.
-- validationContact(): boolean - проверяет, заполнены ли все обязательные поля формы контактов.
-- getFormState() - возвращает текущее состояние всей формы, включая валидность и заполненные данные.
-- validOrder(): void - выводит ошибку на форме, если не заполнен адрес доставки
-- validContact(): void - выводит ошибку, если не заполнены контакты.
-- updateOrder(): void - проверяет валидность формы заказа и отправляет событие order:stateChange с текущим состоянием формы.
-- updateContact(): void - проверяет валидность формы контактов и отправляет событие contacts:stateChange с текущим состоянием формы
+- `setAddressForm(value: string): void` - устанавливает адрес доставки и проверяет состояние формы.
+- `setOrderForm(field: string, value: string): void` - устанавливает значение для указанного поля формы и обновляет состояние формы контактов.
+- `setPaymentMethod(paymentMethod: string): void` - устанавливает выбранный способ оплаты и обновляет состояние формы.
+- `validationOrder(): boolean` - проверяет, заполнены ли все обязательные поля формы заказа.
+- `validationContact(): boolean` - проверяет, заполнены ли все обязательные поля формы контактов.
+- `getFormState()` - возвращает текущее состояние всей формы, включая валидность и заполненные данные.
+- `validOrder(): void` - выводит ошибку на форме, если не заполнен адрес доставки
+- `validContact(): void` - выводит ошибку, если не заполнены контакты.
+- `updateOrder(): void` - проверяет валидность формы заказа и отправляет событие order:stateChange с текущим состоянием формы.
+- `updateContact(): void` - проверяет валидность формы контактов и отправляет событие contacts:stateChange с текущим состоянием формы
 ---
 
 ### Слой View
@@ -190,17 +189,17 @@ yarn build
 
 Поля:
 
-- basket: HTMLElement - элемент корзины.
-- title: HTMLElement - заголовок корзины.
-- basketList: HTMLElement - список товаров в корзине.
-- basketPrice: HTMLElement - отображение общей стоимости товаров в корзине.
-- button: HTMLButtonElement - кнопка для оформления заказа.
+- `basket: HTMLElement` - элемент корзины.
+- `title: HTMLElement` - заголовок корзины.
+- `basketList: HTMLElement` - список товаров в корзине.
+- `basketPrice: HTMLElement` - отображение общей стоимости товаров в корзине.
+- `button: HTMLButtonElement` - кнопка для оформления заказа.
 
 Методы:
 
-- set items(items: HTMLElement[]) - сеттер для обновления списка товаров в корзине.
-- renderTotalSumProducts(sumAll: number) - обновляет общую стоимость товаров в корзине.
-- render() - метод для рендеринга корзины, возвращает клонированный элемент корзины для отображения на странице.
+- `set items(items: HTMLElement[])` - сеттер для обновления списка товаров в корзине.
+- `renderTotalSumProducts(sumAll: number)` - обновляет общую стоимость товаров в корзине.
+- `render()` - метод для рендеринга корзины, возвращает клонированный элемент корзины для отображения на странице.
 ---
 
 Класс **BasketItem**
@@ -209,13 +208,13 @@ yarn build
 
 Поля:
 
-- basketItem: HTMLElement - элемент для отображения товара в корзине.
-- index: HTMLElement - элемент для отображения индекса (порядкового номера) товара в корзине.
-- removeButton: HTMLButtonElement - кнопка для удаления товара из корзины.
+- `basketItem: HTMLElement` - элемент для отображения товара в корзине.
+- `index: HTMLElement` - элемент для отображения индекса (порядкового номера) товара в корзине.
+- `removeButton: HTMLButtonElement` - кнопка для удаления товара из корзины.
 
 Методы:
 
-- render(item: IProduct, item: number): HTMLElement - метод для заполнения данных и отображения товара.
+- `render(item: IProduct, item: number): HTMLElement` - метод для заполнения данных и отображения товара.
 ---
 
 Класс **Card**
@@ -224,15 +223,15 @@ yarn build
 
 Поля:
 
-- cardElement: HTMLElement - элемент карточки товара.
-- category: HTMLElement - элемент, отображающий категорию продукта.
-- image: HTMLImageElement - элемент для отображения изображения продукта.
-- protected color = <Record<string, string>>  - элемент для отображения цвета карточки товара.
+- `cardElement: HTMLElement` - элемент карточки товара.
+- `category: HTMLElement` - элемент, отображающий категорию продукта.
+- `image: HTMLImageElement` - элемент для отображения изображения продукта.
+- `protected color = <Record<string, string>>` - элемент для отображения цвета карточки товара.
 
 Методы:
 
-- set cardCategory(value: string) - метод для отображения цвета карточки товара
-- render(item: IProduct): HTMLElement - метод для заполнения данными и отображения карточки товара.
+- `set cardCategory(value: string)` - метод для отображения цвета карточки товара
+- `render(item: IProduct): HTMLElement` - метод для заполнения данными и отображения карточки товара.
 ---
 
 Класс **CardPreview**
@@ -241,14 +240,14 @@ yarn build
 
 Поля:
 
-- text: HTMLElement - элемент DOM, содержащий текстовое описание товара.
-- button: HTMLButtonElement - кнопка взаимодействия с товаром.
+- `text: HTMLElement` - элемент DOM, содержащий текстовое описание товара.
+- `button: HTMLButtonElement` - кнопка взаимодействия с товаром.
 
 Методы:
 
-- handleAddToBasket(): void - проверяет активность кнопки добавления в корзину.
-- getButtonLabel(item: IProduct, isInBasket: boolean): string - метод для определения текста кнопки "Купить" в зависимости от наличия цены и добавления в корзину.
-- render(item: IProduct): HTMLElement - метод для рендеринга карточки товара с переданными данными.
+- `handleAddToBasket(): void` - проверяет активность кнопки добавления в корзину.
+- `getButtonLabel(item: IProduct, isInBasket: boolean): string` - метод для определения текста кнопки "Купить" в зависимости от наличия цены и добавления в корзину.
+- `render(item: IProduct): HTMLElement` - метод для рендеринга карточки товара с переданными данными.
 ---
 
 Класс **ContactsForm**
@@ -257,14 +256,14 @@ yarn build
 
 Поля:
 
-- inputEmail: HTMLInputElement - используется для получения введённого email.
-- inputPhone: HTMLInputElement - используется для получения введённого номера телефона.
+- `inputEmail: HTMLInputElement` - используется для получения введённого email.
+- `inputPhone: HTMLInputElement` - используется для получения введённого номера телефона.
 
 Методы:
 
-- getEventName(): string - метод возвращает уникальное пространство имен для событий формы.
-- handleSubmit(): void - метод обрабатывает отправку формы.
-- render(): HTMLElement - метод для рендеринга формы и добавления специфичных обработчиков событий для её полей.
+- `getEventName(): string` - метод возвращает уникальное пространство имен для событий формы.
+- `handleSubmit(): void` - метод обрабатывает отправку формы.
+- `render(): HTMLElement` - метод для рендеринга формы и добавления специфичных обработчиков событий для её полей.
 ---
 
 Класс **Form**
@@ -273,22 +272,22 @@ yarn build
 
 Поля:
 
-- formElement: HTMLElement - главный элемент формы, созданный из переданного шаблона.
-- inputAll: HTMLInputElement[] - массив всех полей ввода формы.
-- buttonAll: HTMLButtonElement[] - массив всех кнопок в форме с классом button_alt.
-- buttonSubmit: HTMLButtonElement - кнопка отправки формы.
-- formErrors: HTMLElement - элемент для отображения ошибок формы.
+- `formElement: HTMLElement` - главный элемент формы, созданный из переданного шаблона.
+- `inputAll: HTMLInputElement[]` - массив всех полей ввода формы.
+- `buttonAll: HTMLButtonElement[]` - массив всех кнопок в форме с классом button_alt.
+- `buttonSubmit: HTMLButtonElement` - кнопка отправки формы.
+- `formErrors: HTMLElement` - элемент для отображения ошибок формы.
 
 Методы:
 
-- addInputListener(): void - добавляет слушатели событий input ко всем полям ввода
-- addSubmitListener(): void - добавляет слушатель события submit для формы, предотвращает стандартное поведение отправки формы.
-- onInputChange(): void - оповещает систему событий о том, что поля формы изменились.
-- handleSubmit(): void - определяет логику обработки отправки формы.
-- getEventName(): string - определяет уникальное пространство имен для событий.
-- set isValid(value: boolean) - сеттер для управления состоянием кнопки отправки.
-- displayErrors(): void - выводит ошибки на форме.
-- render(): HTMLElement - возвращает корневой элемент формы для последующего рендера.
+- `addInputListener(): void` - добавляет слушатели событий input ко всем полям ввода
+- `addSubmitListener(): void` - добавляет слушатель события submit для формы, предотвращает стандартное поведение отправки формы.
+- `onInputChange(): void` - оповещает систему событий о том, что поля формы изменились.
+- `handleSubmit(): void` - определяет логику обработки отправки формы.
+- `getEventName(): string` - определяет уникальное пространство имен для событий.
+- `set isValid(value: boolean)` - сеттер для управления состоянием кнопки отправки.
+- `displayErrors(): void` - выводит ошибки на форме.
+- `render(): HTMLElement` - возвращает корневой элемент формы для последующего рендера.
 ---
 
 Класс **Model**
@@ -297,29 +296,29 @@ yarn build
 
 Поля:
 
-- model: HTMLElement - элемент модального окна.
-- content: HTMLElement - контейнер для контента модального окна.
-- closeButton: HTMLButtonElement - кнопка закрытия модального окна.
+- `model: HTMLElement` - элемент модального окна.
+- `content: HTMLElement` - контейнер для контента модального окна.
+- `closeButton: HTMLButtonElement` - кнопка закрытия модального окна.
 
 Методы:
 
-- open(): void - открывает модальное окно.
-- close(): void - закрывает модальное окно.
-- setContent(value: HTMLElement): void - устанавливает содержимое модального окна.
-- render(): HTMLElement - отображает модальное окно, вызывая метод open.
+- `open(): void` - открывает модальное окно.
+- `close(): void` - закрывает модальное окно.
+- `setContent(value: HTMLElement): void` - устанавливает содержимое модального окна.
+- `render(): HTMLElement` - отображает модальное окно, вызывая метод open.
 ---
 
 Класс **Order**
 
 Назначение: предназначен для управления формой заказа, включая выбор способа оплаты и обработку отправки формы. Наследуется от Form.
 
-Поля: Наследуются от Form.
+Поля: `Наследуются от Form.`
 
 Методы:
 
-- getEventName(): string- метод возвращает пространство имен для событий, связанных с оформлением заказа.
-- handleSubmit(): void - метод обработки отправки формы.
-- render() - метод рендеринга формы и добавления обработчиков событий для полей ввода и кнопок выбора способа оплаты.
+- `getEventName(): string` - метод возвращает пространство имен для событий, связанных с оформлением заказа.
+- `handleSubmit(): void` - метод обработки отправки формы.
+- `render()` - метод рендеринга формы и добавления обработчиков событий для полей ввода и кнопок выбора способа оплаты.
 ---
 
 Класс **Page**
@@ -328,16 +327,16 @@ yarn build
 
 Поля:
 
-- basketButton: HTMLButtonElement - кнопка в шапке сайта для открытия корзины.
-- basketCounter: HTMLElement - элемент в шапке, отображающий количество товаров в корзине.
-- pageWrapper: HTMLElement - обертка всей страницы.
-- gallery: HTMLElement - элемент, в котором отображаются карточки товаров.
+- `basketButton: HTMLButtonElement` - кнопка в шапке сайта для открытия корзины.
+- `basketCounter: HTMLElement` - элемент в шапке, отображающий количество товаров в корзине.
+- `pageWrapper: HTMLElement` - обертка всей страницы.
+- `gallery: HTMLElement` - элемент, в котором отображаются карточки товаров.
 
 Методы:
 
-- renderBasketCounter() - метод для обновления счетчика товаров в корзине в шапке страницы.
-- set locked() - метод для блокировки или разблокировки страницы.
-- appendCard() - метод для добавления карточки товара в галерею.
+- `renderBasketCounter()` - метод для обновления счетчика товаров в корзине в шапке страницы.
+- `set locked()` - метод для блокировки или разблокировки страницы.
+- `appendCard()` - метод для добавления карточки товара в галерею.
 ---
 
 Класс **Render**
@@ -346,15 +345,15 @@ yarn build
 
 Поля:
 
-- title: HTMLElement - DOM-элемент, используемый для отображения названия товара.
-- price: HTMLElement - DOM-элемент, используемый для отображения цены товара.
+- `title: HTMLElement` - DOM-элемент, используемый для отображения названия товара.
+- `price: HTMLElement` - DOM-элемент, используемый для отображения цены товара.
 
 Методы:
 
-- initElements(context: HTMLElement): void - инициализирует элементы title и price в указанном контексте DOM.
-- setPrice(value: number | null): string - метод для форматирования цены.
-- renderTitle(element: HTMLElement, title: string): void - метод для рендеринга заголовка товара.
-- renderPrice(element: HTMLElement, price: number | null): void - метод для рендеринга цены товара.
+- `initElements(context: HTMLElement): void` - инициализирует элементы title и price в указанном контексте DOM.
+- `setPrice(value: number | null): string` - метод для форматирования цены.
+- `renderTitle(element: HTMLElement, title: string): void` - метод для рендеринга заголовка товара.
+- `renderPrice(element: HTMLElement, price: number | null): void` - метод для рендеринга цены товара.
 ---
 
 Класс **Success**
@@ -363,20 +362,20 @@ yarn build
 
 Поля:
 
-- successElement: HTMLElement - элемент для отображения сообщения.
-- messageElement: HTMLElement - элемент для текста сообщения.
-- button: HTMLButtonElement - кнопка для закрытия сообщения об успешной операции.
+- `successElement: HTMLElement` - элемент для отображения сообщения.
+- `messageElement: HTMLElement` - элемент для текста сообщения.
+- `button: HTMLButtonElement` - кнопка для закрытия сообщения об успешной операции.
 
 Методы:
 
-- render(total: number): HTMLElement - возвращает корневой элемент success.
+- `render(total: number): HTMLElement` - возвращает корневой элемент success.
 ---
 
-## Слой Presenter
+### Слой Presenter
 
-### Код, относящийся к слою Presenter, реализован в (index.ts) основном скрипте приложения.
+#### Код, относящийся к слою Presenter, реализован в (index.ts) основном скрипте приложения.
 
-## Пример взаимодействия компонентов
+#### Пример взаимодействия компонентов
 Сценарий: добавление товара в корзину
 
 1. Пользователь нажимает кнопку "Добавить в корзину" на карточке товара в View (например, в CardPreview).
@@ -390,18 +389,18 @@ yarn build
 5. View обновляет отображение корзины. Presenter получает обновленные данные из BasketModel и обновляет отображение в BasketView. BasketView обновляет счетчик товаров в шапке сайта и отображает измененную корзину.
 
 6. Модальное окно с превью карточки товара закрывается.
-
-## Данные и типы
+---
+### Данные и типы
 Данные и типы:
 
 1. Типы данных:
-+ IProduct - представляет товар с полями, такими как id, title, description, category, price, image.
-+ BasketModel - управляет состоянием корзины.
++ `IProduct` - представляет товар с полями, такими как id, title, description, category, price, image.
++ `BasketModel` - управляет состоянием корзины.
 2. Данные:
-+ basket: массив товаров, добавленных в корзину.
-+ counter: количество товаров в корзине.
-+ totalSum: общая стоимость всех товаров в корзине.
-
++ `basket`: массив товаров, добавленных в корзину.
++ `counter`: количество товаров в корзине.
++ `totalSum`: общая стоимость всех товаров в корзине.
+---
 ## Реализация процессов через события
 Добавление товара в корзину:
 
