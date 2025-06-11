@@ -30,7 +30,7 @@ export class BasketModel implements IBasketModel {
 
 	clearBasket() {
 		this.basket = [];
-		this.events.emit('basket:updated', this.basket);
+		this.events.emit('basket:update', this.basket);
 	}
 
 	getCounter() {

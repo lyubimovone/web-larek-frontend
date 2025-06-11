@@ -3,6 +3,7 @@ import {
 	createElement,
 	cloneTemplate,
 	ensureElement,
+	isEmpty
 } from '../../utils/utils';
 import { IBasket } from '../../types';
 
@@ -31,7 +32,6 @@ export class Basket implements IBasket {
 
 		this.button.addEventListener('click', () => {
 			this.events.emit('order:open');
-			this.clearBasket();
 		});
 		this.items = [];
 	}
@@ -41,17 +41,11 @@ export class Basket implements IBasket {
 			this.basketList.replaceChildren(...items);
 			this.button.removeAttribute('disabled');
 		} else {
-			this.basketList.replaceChildren(
-				createElement<HTMLParagraphElement>('p', { textContent: 'Корзина пуста' })
-			);
-			this.button.setAttribute('disabled', 'disabled');
-		}
-	}
-
-	clearBasket(): void {
-		this.items = [];
-		this.renderTotalSumProduct(0);
-		this.events.emit('basket:clear');
+		this.basketList.replaceChildren(
+			createElement<HTMLParagraphElement>('p', { textContent: 'Корзина пуста' })
+		);
+		this.button.setAttribute('disabled', 'disabled');
+	 }
 	}
 
 	renderTotalSumProduct(totalSum: number): void {

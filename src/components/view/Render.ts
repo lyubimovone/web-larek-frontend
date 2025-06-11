@@ -3,7 +3,7 @@ import { ensureElement } from '../../utils/utils';
 export class Render {
 	protected title: HTMLElement;
 	protected price: HTMLElement;
-	protected color = <Record<string, string>>{
+	protected color = <Record<string, string>> {
 		"дополнительное": "additional",
 		"софт-скил": "soft",
 		"кнопка": "button",
@@ -11,7 +11,7 @@ export class Render {
 		"другое": "other",
 	}
 
-	constructor() { }
+	constructor() {}
 
 	protected initElements(context: HTMLElement): void {
 		this.title = ensureElement<HTMLElement>('.card__title', context);

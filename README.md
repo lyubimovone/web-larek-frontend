@@ -85,6 +85,22 @@ yarn build
 - `post(uri: string, data: object, method: ApiPostMethods = 'POST')`- выполняет POST, PUT или DELETE-запрос на указанный URI с указанными данными.
 ---
 
+Класс **ApiClient**
+
+Назначение: управление запросами к серверу.
+
+Поля:
+
+- `cdn: string` - базовый URL сервера для API.
+- `items: IProduct[]` - массив товаров типа IProduct.
+
+Методы:
+
+- `getProductList()`: загружает список товаров с сеервера.
+- `getProduct(id: string)`: загружает товар по его id.
+- `postOrder(order: IOrderData)`: отправляет данные о заказе на сервер.
+---
+
 Класс **EventEmitter**
 
 Назначение: брокер событий, реализующий паттерн Observer.
@@ -104,22 +120,6 @@ yarn build
 ---
 
 ### Слой Model
-
-Класс **ApiClient**
-
-Назначение: управление запросами к серверу.
-
-Поля:
-
-- `cdn: string` - базовый URL сервера для API.
-- `items: IProduct[]` - массив товаров типа IProduct.
-
-Методы:
-
-- `getProductList()`: загружает список товаров с сеервера.
-- `getProduct(id: string)`: загружает товар по его id.
-- `postOrder(order: IOrderData)`: отправляет данные о заказе на сервер.
----
 
 Класс **AppData**
 

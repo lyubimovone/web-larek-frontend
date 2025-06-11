@@ -1,7 +1,7 @@
 import { IProduct } from "../../types";
 import { Card } from "./Card";
 import { ensureElement } from "../../utils/utils";
-import { IEvents } from "../base/events";
+import { IEvents } from "../base/events"; 
 
 export class Page {
     private basketButton: HTMLButtonElement;
@@ -17,7 +17,7 @@ export class Page {
         this.basketButton.addEventListener('click', () => {
             this.events.emit('basket:open')
         })
-        this.events.on('basket:updated', (basket: IProduct[]) => {
+        this.events.on('basket:updated', (basket: IProduct[]) =>{
             this.renderBasketCounter(basket.length);
         })
     }

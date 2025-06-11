@@ -18,7 +18,7 @@ export class ContactsForm extends Form {
 		this.inputPhone = this.formElement.querySelector(
 			'input[name="phone"]'
 		) as HTMLInputElement;
-
+		
 		this.inputEmail.addEventListener('input', () => {
 			this.events.emit('contacts:setEmail', { email: this.inputEmail.value });
 		});
@@ -27,11 +27,11 @@ export class ContactsForm extends Form {
 		});
 	}
 
-	protected handleSubmit(): void {
-		this.events.emit('contacts:submit');
-	}
+    protected handleSubmit(): void {
+        this.events.emit('contacts:submit');
+    }
 
-	render(): HTMLElement {
-		return super.render();
-	}
+    render(): HTMLElement {
+        return super.render();
+    }
 }

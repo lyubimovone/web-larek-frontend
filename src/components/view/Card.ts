@@ -7,7 +7,7 @@ export class Card extends Render {
 	category: HTMLElement;
 	image: HTMLImageElement;
 
-	protected color = <Record<string, string>>{
+	protected color = <Record<string, string>> {
 		"дополнительное": "additional",
 		"софт-скил": "soft",
 		"кнопка": "button",
@@ -25,9 +25,9 @@ export class Card extends Render {
 		this.image = ensureElement<HTMLImageElement>('.card__image', this.cardElement);
 		this.initElements(this.cardElement);
 
-		const CardButton = this.cardElement.querySelector('.card__button');
-		if (CardButton) {
-			CardButton.addEventListener('click', openModal);
+		const cardButton = this.cardElement.querySelector('.card__button');
+		if (cardButton) {
+			cardButton.addEventListener('click', openModal);
 		} else {
 			this.cardElement.addEventListener('click', openModal);
 		}
